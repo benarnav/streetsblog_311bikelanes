@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_page_config(page_title="NYC 311 Bike Lane Complaints since Oct 2016", layout="wide")
 
-db_token = 'nMI4Cztvm8T68RhtOXoSIeWoe'
+
 client = Socrata("data.cityofnewyork.us", db_token, timeout=100000000)
 results = client.get("erm2-nwe9", complaint_type="Illegal Parking", status="Closed", descriptor='Blocked Bike Lane', limit=2500000)
 df = pd.DataFrame.from_records(results)
